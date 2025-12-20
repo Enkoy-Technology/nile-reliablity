@@ -5,29 +5,32 @@ import React from 'react';
 import Feature from './Feature';
 
 const Services: React.FC = () => (
-  <section id="services" className="relative py-16 sm:py-24 bg-gradient-to-b from-white via-slate-50 to-slate-50 border-t border-slate-100 overflow-hidden">
-    {/* Background decorations */}
+  <section id="services" className="relative py-20 sm:py-24 lg:py-32 bg-white border-t border-slate-100">
+    {/* Subtle background decoration */}
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute top-20 left-10 w-64 h-64 bg-orange-100 rounded-full blur-3xl opacity-20"></div>
-      <div className="absolute bottom-20 right-10 w-64 h-64 bg-slate-200 rounded-full blur-3xl opacity-20"></div>
+      <div className="absolute top-0 left-0 w-96 h-96 bg-slate-50 rounded-full blur-3xl opacity-40"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-slate-50 rounded-full blur-3xl opacity-40"></div>
     </div>
 
     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      {/* Header with decorative line */}
+      {/* Header */}
       <div className="text-center mb-16 sm:mb-20">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-slate-900 mb-4">
+        {/* Decorative accent line */}
+        <div className="inline-block mb-6">
+          <div className="h-0.5 w-16 bg-slate-900 mx-auto"></div>
+        </div>
+
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-slate-900 mb-6">
           Our Services
         </h2>
-        <div className="inline-block mb-6">
-          <div className="h-1 w-20 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full"></div>
-        </div>
-        <p className="text-base sm:text-lg md:text-xl text-slate-700 max-w-4xl mx-auto font-light px-4 leading-relaxed">
+
+        <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
           Comprehensive condition monitoring solutions to prevent unplanned downtime and optimize equipment reliability.
         </p>
       </div>
 
       {/* Services Grid */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
         <Feature
           icon={Activity}
           title="Vibration Analysis"
