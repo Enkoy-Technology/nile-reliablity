@@ -2,6 +2,7 @@
 
 import About from '@/components/About';
 import AuditForm from '@/components/AuditForm';
+import ConditionMonitoring from '@/components/ConditionMonitoring';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
@@ -41,6 +42,7 @@ export default function Home() {
         setIsMenuOpen={setIsMenuOpen}
       />
       <Hero onScrollTo={handleScrollTo} />
+      <ConditionMonitoring onScrollTo={handleScrollTo} />
       <Services />
       <About />
       <AuditForm />
