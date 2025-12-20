@@ -1,6 +1,6 @@
 'use client';
 
-import { Activity, Droplet, Thermometer } from 'lucide-react';
+import { Activity, Droplet, Gauge, Thermometer, Waves } from 'lucide-react';
 import React from 'react';
 import Feature from './Feature';
 
@@ -30,22 +30,42 @@ const Services: React.FC = () => (
       </div>
 
       {/* Services Grid */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
-        <Feature
-          icon={Activity}
-          title="Vibration Analysis"
-          desc="Advanced monitoring to detect early signs of equipment failure and optimize maintenance schedules using ISO 10816 standards."
-        />
-        <Feature
-          icon={Thermometer}
-          title="Thermal Imaging"
-          desc="Infrared thermography to identify hot spots and thermal anomalies in electrical and mechanical systems with precision accuracy."
-        />
-        <Feature
-          icon={Droplet}
-          title="Oil Analysis"
-          desc="Comprehensive lubricant testing to monitor equipment health and optimize oil change intervals based on real-time data."
-        />
+      <div className="flex flex-wrap justify-center gap-8 sm:gap-10">
+        <div className="w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.67rem)] max-w-md">
+          <Feature
+            icon={Activity}
+            title="Vibration Analysis"
+            desc="Advanced monitoring to detect early signs of equipment failure and optimize maintenance schedules using ISO 10816 standards."
+          />
+        </div>
+        <div className="w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.67rem)] max-w-md">
+          <Feature
+            icon={Thermometer}
+            title="Thermal Imaging"
+            desc="Infrared thermography to identify hot spots and thermal anomalies in electrical and mechanical systems with precision accuracy."
+          />
+        </div>
+        <div className="w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.67rem)] max-w-md">
+          <Feature
+            icon={Droplet}
+            title="Oil Analysis"
+            desc="Comprehensive lubricant testing to monitor equipment health and optimize oil change intervals based on real-time data."
+          />
+        </div>
+        <div className="w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.67rem)] max-w-md">
+          <Feature
+            icon={Gauge}
+            title="Balancing & Alignment"
+            desc="Precision balancing and alignment services to ensure optimal equipment performance, reduce wear, and extend machinery lifespan."
+          />
+        </div>
+        <div className="w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.67rem)] max-w-md">
+          <Feature
+            icon={Waves}
+            title="Ultrasonic Testing"
+            desc="Non-destructive testing using ultrasonic waves to detect internal defects, leaks, and structural integrity issues in equipment and pipelines."
+          />
+        </div>
       </div>
     </div>
   </section>
