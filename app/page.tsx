@@ -5,6 +5,7 @@ import AuditForm from '@/components/AuditForm';
 import ConditionMonitoring from '@/components/ConditionMonitoring';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
+import HowItWorks from '@/components/HowItWorks';
 import Navbar from '@/components/Navbar';
 import Services from '@/components/Services';
 import { ArrowUp } from 'lucide-react';
@@ -44,6 +45,7 @@ export default function Home() {
       <Hero onScrollTo={handleScrollTo} />
       <ConditionMonitoring onScrollTo={handleScrollTo} />
       <Services />
+      <HowItWorks />
       <About />
       <AuditForm />
       <Footer onScrollTo={handleScrollTo} />
