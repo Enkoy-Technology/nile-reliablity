@@ -22,7 +22,7 @@ const HowItWorks: React.FC = () => {
   ];
 
   return (
-    <section id="how-it-works" className="relative py-20 sm:py-24 lg:py-32 bg-slate-50 border-t border-slate-100">
+    <section id="how-it-works" className="relative py-2 sm:py-2 lg:py-10 bg-slate-50 border-t border-slate-100">
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 bg-slate-100 rounded-full blur-3xl opacity-30"></div>
