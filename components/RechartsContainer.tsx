@@ -34,17 +34,17 @@ const RechartsContainer: React.FC<RechartsContainerProps> = ({
   };
 
   const axisStyle = {
-    stroke: '#94a3b8',
+    stroke: '#64748b',
     fontSize: 11,
-    tick: { fill: '#64748b' },
+    tick: { fill: '#94a3b8' },
   };
 
   const tooltipStyle = {
-    backgroundColor: '#ffffff',
-    border: '1px solid #e2e8f0',
+    backgroundColor: '#1e293b',
+    border: '1px solid #334155',
     borderRadius: '6px',
-    color: '#1e293b',
-    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+    color: '#f1f5f9',
+    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.3)',
     padding: '8px 12px',
   };
 
@@ -52,17 +52,17 @@ const RechartsContainer: React.FC<RechartsContainerProps> = ({
     return (
       <ResponsiveContainer width="100%" height="100%">
         <BarChart {...chartProps} barCategoryGap="2%">
-          <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" opacity={0.5} />
+          <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.5} />
           <XAxis
             dataKey={nameKey}
             {...axisStyle}
             tick={{ fontSize: 10 }}
-            label={{ value: 'Frequency (Hz)', position: 'insideBottom', offset: -5, style: { fill: '#64748b', fontSize: 11 } }}
+            label={{ value: 'Frequency (Hz)', position: 'insideBottom', offset: -5, style: { fill: '#94a3b8', fontSize: 11 } }}
           />
           <YAxis
             {...axisStyle}
             tick={{ fontSize: 10 }}
-            label={{ value: 'Amplitude', angle: -90, position: 'insideLeft', style: { fill: '#64748b', fontSize: 11 } }}
+            label={{ value: 'Amplitude', angle: -90, position: 'insideLeft', style: { fill: '#94a3b8', fontSize: 11 } }}
           />
           <Tooltip
             contentStyle={tooltipStyle}
@@ -99,17 +99,17 @@ const RechartsContainer: React.FC<RechartsContainerProps> = ({
               <stop offset="100%" stopColor="#fb923c" />
             </linearGradient>
           </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" opacity={0.5} />
+          <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.5} />
           <XAxis
             dataKey={nameKey}
             {...axisStyle}
             tick={{ fontSize: 10 }}
-            label={{ value: 'Time (samples)', position: 'insideBottom', offset: -5, style: { fill: '#64748b', fontSize: 11 } }}
+            label={{ value: 'Time (samples)', position: 'insideBottom', offset: -5, style: { fill: '#94a3b8', fontSize: 11 } }}
           />
           <YAxis
             {...axisStyle}
             tick={{ fontSize: 10 }}
-            label={{ value: 'Amplitude', angle: -90, position: 'insideLeft', style: { fill: '#64748b', fontSize: 11 } }}
+            label={{ value: 'Amplitude', angle: -90, position: 'insideLeft', style: { fill: '#94a3b8', fontSize: 11 } }}
           />
           <Tooltip
             contentStyle={tooltipStyle}
@@ -138,17 +138,17 @@ const RechartsContainer: React.FC<RechartsContainerProps> = ({
     return (
       <ResponsiveContainer width="100%" height="100%">
         <LineChart {...chartProps}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" opacity={0.5} />
+          <CartesianGrid strokeDasharray="3 3" stroke="#334155" opacity={0.5} />
           <XAxis
             dataKey={nameKey}
             {...axisStyle}
             tick={{ fontSize: 10 }}
-            label={{ value: 'Day', position: 'insideBottom', offset: -5, style: { fill: '#64748b', fontSize: 11 } }}
+            label={{ value: 'Day', position: 'insideBottom', offset: -5, style: { fill: '#94a3b8', fontSize: 11 } }}
           />
           <YAxis
             {...axisStyle}
             tick={{ fontSize: 10 }}
-            label={{ value: 'RMS Velocity (mm/s)', angle: -90, position: 'insideLeft', style: { fill: '#64748b', fontSize: 11 } }}
+            label={{ value: 'RMS Velocity (mm/s)', angle: -90, position: 'insideLeft', style: { fill: '#94a3b8', fontSize: 11 } }}
           />
           <Tooltip
             contentStyle={tooltipStyle}

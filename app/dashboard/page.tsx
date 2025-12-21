@@ -174,14 +174,14 @@ export default function DashboardPage() {
       </motion.section>
 
       {/* Dashboard Section */}
-      <section className="py-8 sm:py-12">
+      <section className="py-8 sm:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Dashboard Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-white border border-slate-200 rounded-lg p-6 mb-6 shadow-sm"
+            className="bg-slate-800 rounded-lg p-6 mb-6"
           >
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div className="flex items-center gap-3">
@@ -190,28 +190,28 @@ export default function DashboardPage() {
                   transition={{ duration: 2, repeat: Infinity }}
                   className="w-3 h-3 bg-green-500 rounded-full"
                 ></motion.div>
-                <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900">
+                <h2 className="text-2xl sm:text-3xl font-semibold text-orange-500">
                   Advanced CM Dashboard
                 </h2>
               </div>
               <div className="flex flex-wrap gap-4 sm:gap-6">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="flex items-center gap-2 text-slate-600"
+                  className="flex items-center gap-2 text-slate-300"
                 >
                   <Clock size={18} />
                   <span className="text-sm font-medium">{currentTime}</span>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="flex items-center gap-2 text-slate-600"
+                  className="flex items-center gap-2 text-slate-300"
                 >
                   <RefreshCw size={18} />
                   <span className="text-sm font-medium">99.8% Sync</span>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="flex items-center gap-2 text-slate-600"
+                  className="flex items-center gap-2 text-slate-300"
                 >
                   <Shield size={18} />
                   <span className="text-sm font-medium">Level 4 Security</span>
@@ -231,22 +231,22 @@ export default function DashboardPage() {
             <motion.div
               variants={itemVariants}
               whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm"
+              className="bg-slate-800 rounded-lg p-6"
             >
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-1">Frequency Spectrum</h3>
-                  <p className="text-sm text-slate-600">FFT Analysis • 0-10kHz</p>
+                  <h3 className="text-xl font-semibold text-white mb-1">Frequency Spectrum</h3>
+                  <p className="text-sm text-slate-400">FFT Analysis • 0-10kHz</p>
                 </div>
                 <motion.span
                   animate={{ opacity: [1, 0.7, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
-                  className="bg-green-500/10 text-green-600 text-xs font-medium px-3 py-1 rounded-full border border-green-500/30"
+                  className="bg-green-500/20 text-green-400 text-xs font-medium px-3 py-1 rounded-full border border-green-500/30"
                 >
                   Active
                 </motion.span>
               </div>
-              <div className="h-64 bg-slate-50 rounded p-4 border border-slate-100">
+              <div className="h-64 bg-slate-900 rounded p-4">
                 {mounted && <FrequencySpectrumCanvas />}
               </div>
             </motion.div>
@@ -255,22 +255,22 @@ export default function DashboardPage() {
             <motion.div
               variants={itemVariants}
               whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm"
+              className="bg-slate-800 rounded-lg p-6"
             >
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-1">Time Waveform</h3>
-                  <p className="text-sm text-slate-600">Raw Vibration • 51.2kHz</p>
+                  <h3 className="text-xl font-semibold text-white mb-1">Time Waveform</h3>
+                  <p className="text-sm text-slate-400">Raw Vibration • 51.2kHz</p>
                 </div>
                 <motion.span
                   animate={{ opacity: [1, 0.7, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
-                  className="bg-green-500/10 text-green-600 text-xs font-medium px-3 py-1 rounded-full border border-green-500/30"
+                  className="bg-green-500/20 text-green-400 text-xs font-medium px-3 py-1 rounded-full border border-green-500/30"
                 >
                   Live
                 </motion.span>
               </div>
-              <div className="h-64 bg-slate-50 rounded p-4 border border-slate-100">
+              <div className="h-64 bg-slate-900 rounded p-4">
                 {mounted && <TimeWaveformCanvas />}
               </div>
             </motion.div>
@@ -287,19 +287,19 @@ export default function DashboardPage() {
             <motion.div
               variants={itemVariants}
               whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm"
+              className="bg-slate-800 rounded-lg p-6"
             >
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-1">Performance Trends</h3>
-                  <p className="text-sm text-slate-600">RMS Velocity • 30-Day</p>
+                  <h3 className="text-xl font-semibold text-white mb-1">Performance Trends</h3>
+                  <p className="text-sm text-slate-400">RMS Velocity • 30-Day</p>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-green-600 text-sm font-medium">Normal</span>
-                  <Activity size={16} className="text-green-600" />
+                  <span className="text-green-400 text-sm font-medium">Normal</span>
+                  <Activity size={16} className="text-green-400" />
                 </div>
               </div>
-              <div className="h-64 bg-slate-50 rounded p-4 border border-slate-100">
+              <div className="h-64 bg-slate-900 rounded p-4">
                 {mounted && (
                   <RechartsContainer
                     type="line"
@@ -315,16 +315,16 @@ export default function DashboardPage() {
             <motion.div
               variants={itemVariants}
               whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm"
+              className="bg-slate-800 rounded-lg p-6"
             >
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-1">Critical Equipment</h3>
-                  <p className="text-sm text-slate-600">Health Monitoring</p>
+                  <h3 className="text-xl font-semibold text-white mb-1">Critical Equipment</h3>
+                  <p className="text-sm text-slate-400">Health Monitoring</p>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-green-600 text-sm font-medium">All Systems</span>
-                  <Activity size={16} className="text-green-600" />
+                  <span className="text-green-400 text-sm font-medium">All Systems</span>
+                  <Activity size={16} className="text-green-400" />
                 </div>
               </div>
               <div className="space-y-4">
@@ -335,12 +335,12 @@ export default function DashboardPage() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.6 + index * 0.1 }}
                     whileHover={{ x: 5, scale: 1.02 }}
-                    className="bg-slate-50 rounded border-l-4 border-l-orange-500 border-r border-t border-b border-r-slate-200 border-t-slate-200 border-b-slate-200 p-4 hover:bg-slate-100 transition-colors cursor-pointer"
+                    className="bg-slate-900 rounded border-l-4 border-l-orange-500 p-4 hover:bg-slate-700 transition-colors cursor-pointer"
                   >
                     <div className="flex justify-between items-center">
                       <div>
-                        <h4 className="text-slate-900 font-medium mb-1">{item.name}</h4>
-                        <p className="text-sm text-slate-600">Vibration Level</p>
+                        <h4 className="text-white font-medium mb-1">{item.name}</h4>
+                        <p className="text-sm text-slate-400">Vibration Level</p>
                       </div>
                       <div className="text-right">
                         <motion.p
@@ -350,7 +350,7 @@ export default function DashboardPage() {
                         >
                           {item.value}
                         </motion.p>
-                        <span className="text-xs text-green-600 uppercase tracking-wide">
+                        <span className="text-xs text-green-400 uppercase tracking-wide">
                           {item.status}
                         </span>
                       </div>

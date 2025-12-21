@@ -68,11 +68,11 @@ const FrequencySpectrumCanvas: React.FC<FrequencySpectrumCanvasProps> = ({
       const canvasHeight = canvas.height;
 
       // Clear canvas
-      ctx.fillStyle = '#f8fafc';
+      ctx.fillStyle = '#0f172a';
       ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
       // Draw grid
-      ctx.strokeStyle = '#e2e8f0';
+      ctx.strokeStyle = '#334155';
       ctx.lineWidth = 1;
 
       // Horizontal grid lines
@@ -137,7 +137,7 @@ const FrequencySpectrumCanvas: React.FC<FrequencySpectrumCanvasProps> = ({
       }
 
       // Draw axes
-      ctx.strokeStyle = '#94a3b8';
+      ctx.strokeStyle = '#64748b';
       ctx.lineWidth = 1;
       ctx.setLineDash([]);
 
@@ -154,7 +154,7 @@ const FrequencySpectrumCanvas: React.FC<FrequencySpectrumCanvasProps> = ({
       ctx.stroke();
 
       // Draw labels
-      ctx.fillStyle = '#64748b';
+      ctx.fillStyle = '#94a3b8';
       ctx.font = '10px system-ui';
       ctx.textAlign = 'center';
 

@@ -55,11 +55,11 @@ const TimeWaveformCanvas: React.FC<TimeWaveformCanvasProps> = ({
       const canvasHeight = canvas.height;
 
       // Clear canvas
-      ctx.fillStyle = '#f8fafc';
+      ctx.fillStyle = '#0f172a';
       ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
       // Draw grid
-      ctx.strokeStyle = '#e2e8f0';
+      ctx.strokeStyle = '#334155';
       ctx.lineWidth = 1;
 
       // Horizontal grid lines
@@ -149,7 +149,7 @@ const TimeWaveformCanvas: React.FC<TimeWaveformCanvasProps> = ({
       ctx.stroke();
 
       // Draw center line (zero reference)
-      ctx.strokeStyle = '#cbd5e1';
+      ctx.strokeStyle = '#475569';
       ctx.lineWidth = 1;
       ctx.setLineDash([5, 5]);
       ctx.beginPath();
@@ -159,7 +159,7 @@ const TimeWaveformCanvas: React.FC<TimeWaveformCanvasProps> = ({
       ctx.setLineDash([]);
 
       // Draw axes
-      ctx.strokeStyle = '#94a3b8';
+      ctx.strokeStyle = '#64748b';
       ctx.lineWidth = 1;
 
       // X-axis
@@ -175,7 +175,7 @@ const TimeWaveformCanvas: React.FC<TimeWaveformCanvasProps> = ({
       ctx.stroke();
 
       // Draw labels
-      ctx.fillStyle = '#64748b';
+      ctx.fillStyle = '#94a3b8';
       ctx.font = '10px system-ui';
       ctx.textAlign = 'center';
 
