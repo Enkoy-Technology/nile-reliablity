@@ -60,7 +60,7 @@ const Navbar: React.FC<NavbarProps> = ({ onScrollTo, isMenuOpen, setIsMenuOpen }
               onClick={() => onScrollTo('audit')}
               className="bg-slate-900 text-white px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-slate-800 transition-all transform hover:-translate-y-0.5 hover:shadow-lg"
             >
-              Free Audit
+              Contact Us
             </button>
           </div>
 

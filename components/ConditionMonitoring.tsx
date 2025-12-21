@@ -10,7 +10,7 @@ interface ConditionMonitoringProps {
 const ConditionMonitoring: React.FC<ConditionMonitoringProps> = ({ onScrollTo }) => {
   const stats = [
     { value: '92%', label: 'Uptime Improvement' },
-    { value: '6-12mo', label: 'ROI Timeline' },
+    { value: '6-12m', label: 'ROI Timeline' },
     { value: '40%', label: 'Cost Reduction' },
   ];
 
@@ -64,7 +64,7 @@ const ConditionMonitoring: React.FC<ConditionMonitoringProps> = ({ onScrollTo })
                 key={index}
                 className="text-center p-6 sm:p-8 bg-white rounded-sm border border-slate-200 hover:border-slate-900 hover:shadow-lg transition-all duration-300 group"
               >
-                <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 mb-3 group-hover:scale-105 transition-transform">
+                <div className="text-3xl sm:text-5xl md:text-4xl font-bold text-slate-900 mb-3 group-hover:scale-105 transition-transform">
                   {stat.value}
                 </div>
                 <div className="text-xs sm:text-sm text-slate-500 font-medium uppercase tracking-wider">
