@@ -28,14 +28,16 @@ const FrequencySpectrumCanvas: React.FC<FrequencySpectrumCanvasProps> = ({
       const container = canvas.parentElement;
       if (container) {
         const rect = container.getBoundingClientRect();
-        canvas.width = rect.width || width;
-        canvas.height = rect.height || height;
+        const newWidth = rect.width || width;
+        const newHeight = rect.height || height;
+        if (newWidth > 0 && newHeight > 0) {
+          canvas.width = newWidth;
+          canvas.height = newHeight;
+          return true;
+        }
       }
+      return false;
     };
-
-    updateCanvasSize();
-    const resizeHandler = () => updateCanvasSize();
-    window.addEventListener('resize', resizeHandler);
 
     // Initialize base frequency values (FFT-like spectrum)
     const numBins = 100;
@@ -62,6 +64,16 @@ const FrequencySpectrumCanvas: React.FC<FrequencySpectrumCanvasProps> = ({
       baseValues.push(baseValue);
     }
     baseValuesRef.current = baseValues;
+
+    // Wait for container to be ready, then start drawing
+    const initAndDraw = () => {
+      if (updateCanvasSize()) {
+        draw();
+      } else {
+        // Retry after a short delay if container not ready
+        setTimeout(initAndDraw, 50);
+      }
+    };
 
     const draw = () => {
       const canvasWidth = canvas.width;
@@ -176,7 +188,13 @@ const FrequencySpectrumCanvas: React.FC<FrequencySpectrumCanvasProps> = ({
       animationFrameRef.current = requestAnimationFrame(draw);
     };
 
-    draw();
+    const resizeHandler = () => {
+      updateCanvasSize();
+    };
+
+    // Initialize and start drawing
+    initAndDraw();
+    window.addEventListener('resize', resizeHandler);
 
     return () => {
       if (animationFrameRef.current) {

@@ -2,18 +2,12 @@
 
 import FrequencySpectrumCanvas from '@/components/FrequencySpectrumCanvas';
 import Logo from '@/components/Logo';
+import RechartsContainer from '@/components/RechartsContainer';
 import TimeWaveformCanvas from '@/components/TimeWaveformCanvas';
 import { motion } from 'framer-motion';
 import { Activity, ArrowLeft, Clock, RefreshCw, Shield } from 'lucide-react';
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-
-// Dynamically import recharts with no SSR (only for trend chart)
-const RechartsContainer = dynamic(
-  () => import('@/components/RechartsContainer'),
-  { ssr: false, loading: () => <div className="w-full h-full flex items-center justify-center text-slate-400">Loading chart...</div> }
-);
 
 export default function DashboardPage() {
   const [currentTime, setCurrentTime] = useState('');
