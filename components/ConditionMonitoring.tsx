@@ -40,13 +40,13 @@ const ConditionMonitoring: React.FC<ConditionMonitoringProps> = ({ onScrollTo })
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button
-                onClick={() => window.open('#', '_blank')}
+              <a
+                href="/dashboard"
                 className="group bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-sm font-bold uppercase tracking-widest text-xs transition-all shadow-lg hover:shadow-xl hover:scale-[1.02] flex items-center justify-center gap-3"
               >
                 <Monitor className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 View Live Dashboard
-              </button>
+              </a>
               <button
                 onClick={() => onScrollTo('audit')}
                 className="group bg-white hover:bg-slate-50 text-slate-900 border-2 border-slate-900 hover:border-slate-800 px-8 py-4 rounded-sm font-bold uppercase tracking-widest text-xs transition-all hover:scale-[1.02] flex items-center justify-center gap-3"
