@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
 import { Calendar, Monitor } from 'lucide-react';
+import React from 'react';
 
 interface ConditionMonitoringProps {
   onScrollTo: (id: string) => void;
@@ -58,7 +58,7 @@ const ConditionMonitoring: React.FC<ConditionMonitoringProps> = ({ onScrollTo })
           </div>
 
           {/* Right Column - Statistics */}
-          <div className="grid grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             {stats.map((stat, index) => (
               <div
                 key={index}

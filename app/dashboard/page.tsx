@@ -225,7 +225,7 @@ export default function DashboardPage() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6"
+            className="flex flex-col lg:grid lg:grid-cols-2 gap-6 mb-6"
           >
             {/* Frequency Spectrum */}
             <motion.div
@@ -281,7 +281,7 @@ export default function DashboardPage() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 lg:grid-cols-2 gap-6"
+            className="flex flex-col lg:grid lg:grid-cols-2 gap-6"
           >
             {/* Performance Trends */}
             <motion.div
