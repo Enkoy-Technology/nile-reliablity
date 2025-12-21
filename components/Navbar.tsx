@@ -38,10 +38,10 @@ const Navbar: React.FC<NavbarProps> = ({ onScrollTo, isMenuOpen, setIsMenuOpen }
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-10">
-            {['Home', 'Services', 'About'].map((item) => (
+            {['Home', 'Services', 'Dashboard', 'About'].map((item) => (
               <button
                 key={item}
-                onClick={() => onScrollTo(item.toLowerCase())}
+                onClick={() => onScrollTo(item.toLowerCase() === 'dashboard' ? 'condition-monitoring' : item.toLowerCase())}
                 className="text-sm font-medium uppercase tracking-wider text-slate-500 hover:text-slate-900 transition-colors relative group py-2"
               >
                 {item}
@@ -75,11 +75,11 @@ const Navbar: React.FC<NavbarProps> = ({ onScrollTo, isMenuOpen, setIsMenuOpen }
         }`}
       >
         <div className="px-4 py-6 space-y-4 flex flex-col items-center">
-          {['Home', 'Services', 'About'].map((item) => (
+          {['Home', 'Services', 'Dashboard', 'About'].map((item) => (
             <button
               key={item}
               onClick={() => {
-                onScrollTo(item.toLowerCase());
+                onScrollTo(item.toLowerCase() === 'dashboard' ? 'condition-monitoring' : item.toLowerCase());
                 setIsMenuOpen(false);
               }}
               className="text-sm font-medium uppercase tracking-wider text-slate-900 hover:text-slate-600 transition-colors w-full py-2 text-center"
