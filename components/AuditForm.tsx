@@ -1,6 +1,7 @@
 'use client';
 
 import texts from '@/data/texts.json';
+import { motion } from 'framer-motion';
 import { CheckCircle2, Loader2, Mail, Send } from 'lucide-react';
 import React, { useState } from 'react';
 
@@ -113,8 +114,38 @@ const AuditForm: React.FC = () => {
     }
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        
+      },
+    },
+  };
+
   return (
-    <section id="audit" className="py-24 bg-slate-900 text-white relative overflow-hidden">
+    <motion.section
+      id="audit"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8 }}
+      className="py-24 bg-slate-900 text-white relative overflow-hidden"
+    >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Subtle pattern */}
@@ -132,19 +163,49 @@ const AuditForm: React.FC = () => {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Title */}
-        <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light leading-tight mb-4 px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12 sm:mb-16"
+        >
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-light leading-tight mb-4 px-4"
+          >
             {texts.auditForm.title.main} <span className="font-semibold italic">{texts.auditForm.title.highlighted}</span>
-          </h2>
-          <div className="w-16 h-0.5 bg-white mx-auto mb-4 sm:mb-6"></div>
-          <p className="text-slate-300 text-base sm:text-lg font-light max-w-2xl mx-auto px-4">
+          </motion.h2>
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 64 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8,  delay: 0.2 }}
+            className="h-0.5 bg-white mx-auto mb-4 sm:mb-6 overflow-hidden"
+          ></motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-slate-300 text-base sm:text-lg font-light max-w-2xl mx-auto px-4"
+          >
             {texts.auditForm.subtitle}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid lg:grid-cols-2 gap-8 lg:gap-16"
+        >
           {/* Left: Persuasive Copy */}
-          <div className="space-y-6 sm:space-y-8 animate-fade-in-right order-2 lg:order-1">
+          <motion.div variants={itemVariants} className="space-y-6 sm:space-y-8 order-2 lg:order-1">
             <div className="space-y-4 sm:space-y-6">
               <h3 className="text-2xl sm:text-3xl font-light leading-tight">
                 {texts.auditForm.leftSection.heading.line1} <br className="hidden sm:block"/>
@@ -168,10 +229,14 @@ const AuditForm: React.FC = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right: The Form */}
-          <div className="bg-white text-slate-900 p-6 sm:p-8 lg:p-10 shadow-2xl rounded-lg animate-fade-in-left hover:shadow-3xl transition-shadow duration-300 order-1 lg:order-2">
+          <motion.div
+            variants={itemVariants}
+            whileHover={{ scale: 1.01 }}
+            className="bg-white text-slate-900 p-6 sm:p-8 lg:p-10 shadow-2xl rounded-lg hover:shadow-3xl transition-shadow duration-300 order-1 lg:order-2"
+          >
             {formStatus === 'success' ? (
               <div className="text-center py-12 animate-fade-in">
                 <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 animate-scale-in">
@@ -321,10 +386,10 @@ const AuditForm: React.FC = () => {
                 </button>
               </form>
             )}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

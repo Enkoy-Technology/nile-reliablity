@@ -1,10 +1,47 @@
 'use client';
 
 import texts from '@/data/texts.json';
+import { motion } from 'framer-motion';
 import React from 'react';
 
 const HowItWorks: React.FC = () => {
   const steps = texts.howItWorks.steps;
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        
+      },
+    },
+  };
+
+  const stepVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 30 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        
+      },
+    },
+  };
 
   return (
     <section id="how-it-works" className="relative py-2 sm:py-2 lg:py-10 bg-slate-50 border-t border-slate-100">
@@ -16,23 +53,52 @@ const HowItWorks: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16 sm:mb-20">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-slate-900 mb-4">
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="text-center mb-16 sm:mb-20"
+        >
+          <motion.h2
+            variants={itemVariants}
+            className="text-4xl sm:text-5xl lg:text-6xl font-light text-slate-900 mb-4"
+          >
             {texts.howItWorks.title}
-          </h2>
+          </motion.h2>
           {/* Decorative underline */}
-          <div className="inline-block mb-8">
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 80 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="inline-block mb-8 overflow-hidden"
+          >
             <div className="h-0.5 w-20 bg-slate-900"></div>
-          </div>
-          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
+          </motion.div>
+          <motion.p
+            variants={itemVariants}
+            className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed"
+          >
             {texts.howItWorks.subtitle}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Three-Step Process */}
-        <div className="grid md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12"
+        >
           {steps.map((step, index) => (
-            <div key={step.number} className="relative text-center">
+            <motion.div
+              key={step.number}
+              variants={stepVariants}
+              whileHover={{ y: -10, scale: 1.05 }}
+              className="relative text-center"
+            >
               {/* Number Circle */}
               <div className="flex justify-center mb-6">
                 <div className="relative">
@@ -51,9 +117,9 @@ const HowItWorks: React.FC = () => {
               <p className="text-base text-slate-600 leading-relaxed font-light">
                 {step.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

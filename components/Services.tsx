@@ -1,9 +1,45 @@
 'use client';
 
 import texts from '@/data/texts.json';
+import { motion } from 'framer-motion';
 import React from 'react';
 
 const Services: React.FC = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 60, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        
+      },
+    },
+  };
   const imageMap: Record<string, string> = {
     'Thermography': "url('/images/thermography.png')",
     'Vibration': "url('/images/vibration.png')",
@@ -21,26 +57,58 @@ const Services: React.FC = () => {
     <section id="services" className="relative py-20 sm:py-24 lg:py-32 bg-slate-50 border-t border-slate-100">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16 sm:mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16 sm:mb-20"
+        >
           {/* Decorative accent line */}
-          <div className="inline-block mb-6">
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 64 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="inline-block mb-6 overflow-hidden mx-auto"
+          >
             <div className="h-0.5 w-16 bg-slate-900 mx-auto"></div>
-          </div>
+          </motion.div>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-slate-900 mb-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-light text-slate-900 mb-6"
+          >
             {texts.services.title}
-          </h2>
+          </motion.h2>
 
-          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed"
+          >
             {texts.services.subtitle}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Services Grid - 3 columns on desktop, 1 on mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12"
+        >
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={cardVariants}
+              whileHover={{ y: -10, scale: 1.02 }}
               className="relative"
             >
               {/* Full-width Background Image */}
@@ -61,9 +129,9 @@ const Services: React.FC = () => {
                   {service.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
