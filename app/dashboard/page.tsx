@@ -168,7 +168,7 @@ export default function DashboardPage() {
       </motion.section>
 
       {/* Dashboard Section */}
-      <section className="py-8 sm:py-12 bg-white">
+      <section className="py-8 sm:py-12 pb-16 sm:pb-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Dashboard Header */}
           <motion.div
