@@ -6,7 +6,7 @@ import React from 'react';
 const Logo: React.FC = () => (
   <div className="flex flex-col items-center justify-center group cursor-pointer">
     {/* Recreation of the "Handwritten N" Logo */}
-    <div className="mb-1 transition-transform group-hover:scale-110 group-hover:rotate-2 duration-500">
+    <div className="mb-1">
       <svg
         width="50"
         height="50"

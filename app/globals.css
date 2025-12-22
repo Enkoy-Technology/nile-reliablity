@@ -20,12 +20,30 @@
   .path-draw {
     stroke-dasharray: 200;
     stroke-dashoffset: 200;
-    animation: draw 2s ease-in-out forwards;
+    animation: draw 2s ease-in-out infinite;
   }
 
   @keyframes draw {
-    to {
+    0% {
+      stroke-dashoffset: 200;
+    }
+    50% {
       stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: 200;
+    }
+  }
+
+  @keyframes logo-pulse {
+    0% {
+      transform: scale(1) rotate(0deg);
+    }
+    50% {
+      transform: scale(1.1) rotate(3deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
     }
   }
 
@@ -149,6 +167,11 @@
 
   .animate-slide-down {
     animation: slide-down 0.3s ease-out;
+  }
+
+  .animate-logo-pulse {
+    animation: logo-pulse 2s ease-in-out infinite;
+    animation-fill-mode: both;
   }
 
   .hover-lift {
