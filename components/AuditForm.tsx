@@ -131,7 +131,7 @@ const AuditForm: React.FC = () => {
         {/* Section Title */}
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light leading-tight mb-4 px-4">
-            Request Your <span className="font-semibold italic">Free Plant Audit</span>
+            Request Your <span className="font-semibold italic">Plant Audit</span>
           </h2>
           <div className="w-16 h-0.5 bg-white mx-auto mb-4 sm:mb-6"></div>
           <p className="text-slate-300 text-base sm:text-lg font-light max-w-2xl mx-auto px-4">

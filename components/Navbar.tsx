@@ -39,7 +39,7 @@ const Navbar: React.FC<NavbarProps> = ({ onScrollTo, isMenuOpen, setIsMenuOpen }
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-10">
-            {['Home', 'Services', 'About'].map((item) => (
+            {['Home','Dashboard', 'Services', 'About'].map((item) => (
               <button
                 key={item}
                 onClick={() => onScrollTo(item.toLowerCase())}
@@ -49,13 +49,7 @@ const Navbar: React.FC<NavbarProps> = ({ onScrollTo, isMenuOpen, setIsMenuOpen }
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-slate-900 transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
-            <Link
-              href="/dashboard"
-              className="text-sm font-medium uppercase tracking-wider text-slate-500 hover:text-slate-900 transition-colors relative group py-2"
-            >
-              Dashboard
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-slate-900 transition-all duration-300 group-hover:w-full"></span>
-            </Link>
+
             <button
               onClick={() => onScrollTo('audit')}
               className="bg-slate-900 text-white px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-slate-800 transition-all transform hover:-translate-y-0.5 hover:shadow-lg"

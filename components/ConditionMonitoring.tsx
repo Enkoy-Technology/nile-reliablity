@@ -15,7 +15,7 @@ const ConditionMonitoring: React.FC<ConditionMonitoringProps> = ({ onScrollTo })
   ];
 
   return (
-    <section id="condition-monitoring" className="relative py-20 sm:py-24 lg:py-32 bg-gradient-to-b from-slate-50 to-white border-t border-slate-100">
+    <section id="dashboard" className="relative py-20 sm:py-24 lg:py-32 bg-gradient-to-b from-slate-50 to-white border-t border-slate-100">
       {/* Subtle background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 bg-slate-100 rounded-full blur-3xl opacity-30"></div>
