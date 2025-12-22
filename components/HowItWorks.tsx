@@ -25,7 +25,7 @@ const HowItWorks: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        
+
       },
     },
   };
@@ -38,7 +38,7 @@ const HowItWorks: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.5,
-        
+
       },
     },
   };

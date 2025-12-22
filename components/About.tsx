@@ -24,7 +24,7 @@ const About: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        
+
       },
     },
   };
@@ -37,7 +37,7 @@ const About: React.FC = () => {
       scale: 1,
       transition: {
         duration: 0.5,
-        
+
       },
     },
   };

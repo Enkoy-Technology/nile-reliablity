@@ -132,7 +132,7 @@ const AuditForm: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        
+
       },
     },
   };

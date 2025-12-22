@@ -28,7 +28,7 @@ const Hero: React.FC<HeroProps> = ({ onScrollTo }) => {
       y: 0,
       transition: {
         duration: 0.8,
-        
+
       },
     },
   };
