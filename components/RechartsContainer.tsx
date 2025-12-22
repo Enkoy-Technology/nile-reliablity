@@ -1,5 +1,6 @@
 'use client';
 
+import texts from '@/data/texts.json';
 import React from 'react';
 import {
     Area,
@@ -57,18 +58,18 @@ const RechartsContainer: React.FC<RechartsContainerProps> = ({
             dataKey={nameKey}
             {...axisStyle}
             tick={{ fontSize: 10 }}
-            label={{ value: 'Frequency (Hz)', position: 'insideBottom', offset: -5, style: { fill: '#94a3b8', fontSize: 11 } }}
+            label={{ value: texts.charts.frequencySpectrum.xAxisLabel, position: 'insideBottom', offset: -5, style: { fill: '#94a3b8', fontSize: 11 } }}
           />
           <YAxis
             {...axisStyle}
             tick={{ fontSize: 10 }}
-            label={{ value: 'Amplitude', angle: -90, position: 'insideLeft', style: { fill: '#94a3b8', fontSize: 11 } }}
+            label={{ value: texts.charts.frequencySpectrum.yAxisLabel, angle: -90, position: 'insideLeft', style: { fill: '#94a3b8', fontSize: 11 } }}
           />
           <Tooltip
             contentStyle={tooltipStyle}
             cursor={{ fill: 'rgba(249, 115, 22, 0.1)' }}
-            formatter={(value: any) => [`${value.toFixed(2)}`, 'Amplitude']}
-            labelFormatter={(label) => `Frequency: ${label} Hz`}
+            formatter={(value: any) => [`${value.toFixed(2)}`, texts.charts.frequencySpectrum.tooltipValue]}
+            labelFormatter={(label) => `${texts.charts.frequencySpectrum.tooltipLabel}: ${label} Hz`}
           />
           <Bar
             dataKey={dataKey}
@@ -104,18 +105,18 @@ const RechartsContainer: React.FC<RechartsContainerProps> = ({
             dataKey={nameKey}
             {...axisStyle}
             tick={{ fontSize: 10 }}
-            label={{ value: 'Time (samples)', position: 'insideBottom', offset: -5, style: { fill: '#94a3b8', fontSize: 11 } }}
+            label={{ value: texts.charts.timeWaveform.xAxisLabel, position: 'insideBottom', offset: -5, style: { fill: '#94a3b8', fontSize: 11 } }}
           />
           <YAxis
             {...axisStyle}
             tick={{ fontSize: 10 }}
-            label={{ value: 'Amplitude', angle: -90, position: 'insideLeft', style: { fill: '#94a3b8', fontSize: 11 } }}
+            label={{ value: texts.charts.timeWaveform.yAxisLabel, angle: -90, position: 'insideLeft', style: { fill: '#94a3b8', fontSize: 11 } }}
           />
           <Tooltip
             contentStyle={tooltipStyle}
             cursor={{ stroke: '#f97316', strokeWidth: 1, strokeDasharray: '5 5' }}
-            formatter={(value: any) => [`${value.toFixed(2)}`, 'Amplitude']}
-            labelFormatter={(label) => `Sample: ${label}`}
+            formatter={(value: any) => [`${value.toFixed(2)}`, texts.charts.timeWaveform.tooltipValue]}
+            labelFormatter={(label) => `${texts.charts.timeWaveform.tooltipLabel}: ${label}`}
           />
           <Area
             type="basis"
@@ -143,18 +144,18 @@ const RechartsContainer: React.FC<RechartsContainerProps> = ({
             dataKey={nameKey}
             {...axisStyle}
             tick={{ fontSize: 10 }}
-            label={{ value: 'Day', position: 'insideBottom', offset: -5, style: { fill: '#94a3b8', fontSize: 11 } }}
+            label={{ value: texts.charts.performanceTrends.xAxisLabel, position: 'insideBottom', offset: -5, style: { fill: '#94a3b8', fontSize: 11 } }}
           />
           <YAxis
             {...axisStyle}
             tick={{ fontSize: 10 }}
-            label={{ value: 'RMS Velocity (mm/s)', angle: -90, position: 'insideLeft', style: { fill: '#94a3b8', fontSize: 11 } }}
+            label={{ value: texts.charts.performanceTrends.yAxisLabel, angle: -90, position: 'insideLeft', style: { fill: '#94a3b8', fontSize: 11 } }}
           />
           <Tooltip
             contentStyle={tooltipStyle}
             cursor={{ stroke: '#f97316', strokeWidth: 1 }}
-            formatter={(value: any) => [`${value.toFixed(2)} mm/s`, 'RMS Velocity']}
-            labelFormatter={(label) => `Day ${label}`}
+            formatter={(value: any) => [`${value.toFixed(2)} mm/s`, texts.charts.performanceTrends.tooltipValue]}
+            labelFormatter={(label) => `${texts.charts.performanceTrends.tooltipLabel} ${label}`}
           />
           <Line
             type="monotone"

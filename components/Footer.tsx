@@ -1,28 +1,16 @@
 'use client';
 
-import React from 'react';
+import texts from '@/data/texts.json';
 import { ArrowRight, Clock, Mail, MapPin, Phone } from 'lucide-react';
+import React from 'react';
 
 interface FooterProps {
   onScrollTo: (id: string) => void;
 }
 
 const Footer: React.FC<FooterProps> = ({ onScrollTo }) => {
-  const services = [
-    'Vibration Analysis',
-    'Thermal Imaging',
-    'Oil Analysis',
-    'Balancing & Alignment',
-    'Ultrasonic Testing'
-  ];
-
-  const technologies = [
-    'Emerson AMS',
-    'SKF Microlog',
-    'Fluke 810',
-    'IIoT Platforms',
-    'Predictive Analytics'
-  ];
+  const services = texts.footer.sections.services.items;
+  const technologies = texts.footer.sections.technologies.items;
 
   return (
     <footer className="bg-slate-900 text-white py-16 sm:py-20">
@@ -31,18 +19,18 @@ const Footer: React.FC<FooterProps> = ({ onScrollTo }) => {
           {/* Column 1: Nile Reliability */}
           <div>
             <h3 className="text-lg font-semibold text-orange-500 mb-3">
-              Nile Reliability
+              {texts.footer.companyName}
             </h3>
             <div className="h-0.5 w-12 bg-orange-500 mb-4"></div>
             <p className="text-slate-300 text-sm leading-relaxed">
-              Ethiopia&apos;s leading provider of condition monitoring and predictive maintenance services, helping industries optimize equipment reliability and prevent unplanned downtime.
+              {texts.footer.companyDescription}
             </p>
           </div>
 
           {/* Column 2: Services */}
           <div>
             <h3 className="text-lg font-semibold text-orange-500 mb-3">
-              Services
+              {texts.footer.sections.services.title}
             </h3>
             <div className="h-0.5 w-12 bg-orange-500 mb-4"></div>
             <ul className="space-y-2">
@@ -58,7 +46,7 @@ const Footer: React.FC<FooterProps> = ({ onScrollTo }) => {
           {/* Column 3: Technologies */}
           <div>
             <h3 className="text-lg font-semibold text-orange-500 mb-3">
-              Technologies
+              {texts.footer.sections.technologies.title}
             </h3>
             <div className="h-0.5 w-12 bg-orange-500 mb-4"></div>
             <ul className="space-y-2">
@@ -74,29 +62,29 @@ const Footer: React.FC<FooterProps> = ({ onScrollTo }) => {
           {/* Column 4: Contact */}
           <div>
             <h3 className="text-lg font-semibold text-orange-500 mb-3">
-              Contact
+              {texts.footer.sections.contact.title}
             </h3>
             <div className="h-0.5 w-12 bg-orange-500 mb-4"></div>
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-slate-300 text-sm">
                 <MapPin className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5" />
-                <span>Meskel Flower, Addis Ababa</span>
+                <span>{texts.footer.sections.contact.address}</span>
               </li>
               <li className="flex items-center gap-3 text-slate-300 text-sm">
                 <Phone className="w-4 h-4 text-orange-500 flex-shrink-0" />
-                <a href="tel:+251920224047" className="hover:text-white transition-colors">
-                  +251 920224047
+                <a href={`tel:${texts.footer.sections.contact.phone.replace(/\s/g, '')}`} className="hover:text-white transition-colors">
+                  {texts.footer.sections.contact.phone}
                 </a>
               </li>
               <li className="flex items-center gap-3 text-slate-300 text-sm">
                 <Mail className="w-4 h-4 text-orange-500 flex-shrink-0" />
-                <a href="mailto:contact@nilereliability.com" className="hover:text-white transition-colors">
-                  contact@nilereliability.com
+                <a href={`mailto:${texts.footer.sections.contact.email}`} className="hover:text-white transition-colors">
+                  {texts.footer.sections.contact.email}
                 </a>
               </li>
               <li className="flex items-center gap-3 text-slate-300 text-sm">
                 <Clock className="w-4 h-4 text-orange-500 flex-shrink-0" />
-                <span>Mon-Fri: 8:00 AM - 5:00 PM</span>
+                <span>{texts.footer.sections.contact.hours}</span>
               </li>
             </ul>
           </div>
@@ -105,7 +93,7 @@ const Footer: React.FC<FooterProps> = ({ onScrollTo }) => {
         {/* Copyright */}
         <div className="pt-8 border-t border-slate-800">
           <div className="text-slate-400 text-sm text-center">
-            © {new Date().getFullYear()} Nile Reliability Solutions. All rights reserved.
+            © {new Date().getFullYear()} {texts.footer.copyright}
           </div>
         </div>
       </div>

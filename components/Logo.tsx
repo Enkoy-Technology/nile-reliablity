@@ -1,5 +1,6 @@
 'use client';
 
+import texts from '@/data/texts.json';
 import React from 'react';
 
 const Logo: React.FC = () => (
@@ -26,10 +27,10 @@ const Logo: React.FC = () => (
     </div>
     <div className="flex flex-col items-center">
       <span className="text-xl font-medium tracking-[0.2em] text-slate-900 uppercase group-hover:text-slate-700 transition-colors duration-300">
-        Nile Reliability
+        {texts.logo.mainText}
       </span>
       <span className="text-[10px] tracking-[0.4em] text-slate-500 uppercase mt-1 group-hover:text-slate-600 transition-colors duration-300">
-        Solutions
+        {texts.logo.subText}
       </span>
     </div>
   </div>

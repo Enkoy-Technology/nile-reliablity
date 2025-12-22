@@ -1,5 +1,6 @@
 'use client';
 
+import texts from '@/data/texts.json';
 import { Calendar, Monitor } from 'lucide-react';
 import React from 'react';
 
@@ -8,11 +9,7 @@ interface ConditionMonitoringProps {
 }
 
 const ConditionMonitoring: React.FC<ConditionMonitoringProps> = ({ onScrollTo }) => {
-  const stats = [
-    { value: '92%', label: 'Uptime Improvement' },
-    { value: '6-12m', label: 'ROI Timeline' },
-    { value: '40%', label: 'Cost Reduction' },
-  ];
+  const stats = texts.conditionMonitoring.stats;
 
   return (
     <section id="dashboard" className="relative py-20 sm:py-24 lg:py-32 bg-gradient-to-b from-slate-50 to-white border-t border-slate-100">
@@ -32,10 +29,10 @@ const ConditionMonitoring: React.FC<ConditionMonitoringProps> = ({ onScrollTo })
             </div>
 
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-slate-900 mb-6 leading-tight">
-              Advanced Condition Monitoring for <span className="font-semibold italic">Industrial Reliability</span>
+              {texts.conditionMonitoring.heading.main} <span className="font-semibold italic">{texts.conditionMonitoring.heading.highlighted}</span>
             </h2>
             <p className="text-lg sm:text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light">
-              Our precision vibration analysis services prevent unplanned downtime and optimize equipment performance for industries across Ethiopia with AI-powered predictive analytics.
+              {texts.conditionMonitoring.description}
             </p>
 
             {/* CTA Buttons */}
@@ -45,14 +42,14 @@ const ConditionMonitoring: React.FC<ConditionMonitoringProps> = ({ onScrollTo })
                 className="group bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-sm font-bold uppercase tracking-widest text-xs transition-all shadow-lg hover:shadow-xl hover:scale-[1.02] flex items-center justify-center gap-3"
               >
                 <Monitor className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                View Live Dashboard
+                {texts.conditionMonitoring.viewDashboardButton}
               </a>
               <button
                 onClick={() => onScrollTo('audit')}
                 className="group bg-white hover:bg-slate-50 text-slate-900 border-2 border-slate-900 hover:border-slate-800 px-8 py-4 rounded-sm font-bold uppercase tracking-widest text-xs transition-all hover:scale-[1.02] flex items-center justify-center gap-3"
               >
                 <Calendar className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                Schedule Audit
+                {texts.conditionMonitoring.scheduleAuditButton}
               </button>
             </div>
           </div>

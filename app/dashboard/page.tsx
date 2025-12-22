@@ -4,6 +4,7 @@ import FrequencySpectrumCanvas from '@/components/FrequencySpectrumCanvas';
 import Logo from '@/components/Logo';
 import RechartsContainer from '@/components/RechartsContainer';
 import TimeWaveformCanvas from '@/components/TimeWaveformCanvas';
+import texts from '@/data/texts.json';
 import { motion } from 'framer-motion';
 import { Activity, ArrowLeft, Clock, RefreshCw, Shield } from 'lucide-react';
 import Link from 'next/link';
@@ -15,12 +16,13 @@ export default function DashboardPage() {
 
   // Trend data state (updates less frequently, so React state is fine)
   const [trendData, setTrendData] = useState<Array<{ day: number; value: number }>>([]);
-  const [equipment, setEquipment] = useState([
-    { name: 'Main Turbine', value: '2.1 mm/s', status: 'normal' },
-    { name: 'Pump System A', value: '3.8 mm/s', status: 'normal' },
-    { name: 'Compressor Unit 1', value: '1.5 mm/s', status: 'normal' },
-    { name: 'Generator B', value: '2.9 mm/s', status: 'normal' },
-  ]);
+  const [equipment, setEquipment] = useState(
+    texts.dashboard.equipment.map(eq => ({
+      name: eq.name,
+      value: '2.1 mm/s',
+      status: eq.status
+    }))
+  );
 
   // Refs to maintain base values for trend updates
   const trendBaseRef = useRef<Array<number>>([]);
@@ -129,7 +131,7 @@ export default function DashboardPage() {
             <div className="flex items-center gap-4">
               <Link href="/" className="flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors">
                 <ArrowLeft size={20} />
-                <span className="text-sm font-medium">Back</span>
+                <span className="text-sm font-medium">{texts.dashboard.backButton}</span>
               </Link>
               <div className="h-6 w-px bg-slate-300"></div>
               <Logo />
@@ -161,7 +163,7 @@ export default function DashboardPage() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-light text-slate-900 mb-6"
             >
-              Real-time dashboard with AI-powered predictive analytics and multi-dimensional diagnostics
+              {texts.dashboard.heroTitle}
             </motion.h1>
           </div>
         </div>
@@ -185,7 +187,7 @@ export default function DashboardPage() {
                   className="w-3 h-3 bg-green-500 rounded-full"
                 ></motion.div>
                 <h2 className="text-2xl sm:text-3xl font-semibold text-orange-500">
-                  Advanced CM Dashboard
+                  {texts.dashboard.header.title}
                 </h2>
               </div>
               <div className="flex flex-wrap gap-4 sm:gap-6">
@@ -201,14 +203,14 @@ export default function DashboardPage() {
                   className="flex items-center gap-2 text-slate-300"
                 >
                   <RefreshCw size={18} />
-                  <span className="text-sm font-medium">99.8% Sync</span>
+                  <span className="text-sm font-medium">{texts.dashboard.header.syncStatus}</span>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   className="flex items-center gap-2 text-slate-300"
                 >
                   <Shield size={18} />
-                  <span className="text-sm font-medium">Level 4 Security</span>
+                  <span className="text-sm font-medium">{texts.dashboard.header.securityLevel}</span>
                 </motion.div>
               </div>
             </div>
@@ -229,15 +231,15 @@ export default function DashboardPage() {
             >
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-1">Frequency Spectrum</h3>
-                  <p className="text-sm text-slate-400">FFT Analysis • 0-10kHz</p>
+                  <h3 className="text-xl font-semibold text-white mb-1">{texts.dashboard.widgets.frequencySpectrum.title}</h3>
+                  <p className="text-sm text-slate-400">{texts.dashboard.widgets.frequencySpectrum.subtitle}</p>
                 </div>
                 <motion.span
                   animate={{ opacity: [1, 0.7, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                   className="bg-green-500/20 text-green-400 text-xs font-medium px-3 py-1 rounded-full border border-green-500/30"
                 >
-                  Active
+                  {texts.dashboard.widgets.frequencySpectrum.status}
                 </motion.span>
               </div>
               <div className="h-64 bg-slate-900 rounded p-4">
@@ -253,15 +255,15 @@ export default function DashboardPage() {
             >
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-1">Time Waveform</h3>
-                  <p className="text-sm text-slate-400">Raw Vibration • 51.2kHz</p>
+                  <h3 className="text-xl font-semibold text-white mb-1">{texts.dashboard.widgets.timeWaveform.title}</h3>
+                  <p className="text-sm text-slate-400">{texts.dashboard.widgets.timeWaveform.subtitle}</p>
                 </div>
                 <motion.span
                   animate={{ opacity: [1, 0.7, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                   className="bg-green-500/20 text-green-400 text-xs font-medium px-3 py-1 rounded-full border border-green-500/30"
                 >
-                  Live
+                  {texts.dashboard.widgets.timeWaveform.status}
                 </motion.span>
               </div>
               <div className="h-64 bg-slate-900 rounded p-4">
@@ -285,11 +287,11 @@ export default function DashboardPage() {
             >
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-1">Performance Trends</h3>
-                  <p className="text-sm text-slate-400">RMS Velocity • 30-Day</p>
+                  <h3 className="text-xl font-semibold text-white mb-1">{texts.dashboard.widgets.performanceTrends.title}</h3>
+                  <p className="text-sm text-slate-400">{texts.dashboard.widgets.performanceTrends.subtitle}</p>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-green-400 text-sm font-medium">Normal</span>
+                  <span className="text-green-400 text-sm font-medium">{texts.dashboard.widgets.performanceTrends.status}</span>
                   <Activity size={16} className="text-green-400" />
                 </div>
               </div>
@@ -313,11 +315,11 @@ export default function DashboardPage() {
             >
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-1">Critical Equipment</h3>
-                  <p className="text-sm text-slate-400">Health Monitoring</p>
+                  <h3 className="text-xl font-semibold text-white mb-1">{texts.dashboard.widgets.criticalEquipment.title}</h3>
+                  <p className="text-sm text-slate-400">{texts.dashboard.widgets.criticalEquipment.subtitle}</p>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-green-400 text-sm font-medium">All Systems</span>
+                  <span className="text-green-400 text-sm font-medium">{texts.dashboard.widgets.criticalEquipment.status}</span>
                   <Activity size={16} className="text-green-400" />
                 </div>
               </div>
@@ -334,7 +336,7 @@ export default function DashboardPage() {
                     <div className="flex justify-between items-center">
                       <div>
                         <h4 className="text-white font-medium mb-1">{item.name}</h4>
-                        <p className="text-sm text-slate-400">Vibration Level</p>
+                        <p className="text-sm text-slate-400">{texts.dashboard.widgets.criticalEquipment.vibrationLevel}</p>
                       </div>
                       <div className="text-right">
                         <motion.p

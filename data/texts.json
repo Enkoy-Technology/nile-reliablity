@@ -1,0 +1,287 @@
+{
+  "navbar": {
+    "menuItems": ["Home", "Dashboard", "Services", "About"],
+    "contactButton": "Contact Us",
+    "mobileMenu": {
+      "contactButton": "Request Audit"
+    }
+  },
+  "hero": {
+    "heading": {
+      "line1": "Keeping Your Equipment",
+      "line2": "Running Smooth"
+    },
+    "subtitle": "Accurate vibration analysis and thermal checks to catch issues early.",
+    "ctaButton": "Get Started",
+    "socialProof": "Trusted by Experts."
+  },
+  "conditionMonitoring": {
+    "heading": {
+      "main": "Advanced Condition Monitoring for",
+      "highlighted": "Industrial Reliability"
+    },
+    "description": "Our precision vibration analysis services prevent unplanned downtime and optimize equipment performance for industries across Ethiopia with AI-powered predictive analytics.",
+    "viewDashboardButton": "View Live Dashboard",
+    "scheduleAuditButton": "Schedule Audit",
+    "stats": [
+      {
+        "value": "92%",
+        "label": "Uptime Improvement"
+      },
+      {
+        "value": "6-12m",
+        "label": "ROI Timeline"
+      },
+      {
+        "value": "40%",
+        "label": "Cost Reduction"
+      }
+    ]
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive condition monitoring solutions to prevent unplanned downtime and optimize equipment reliability.",
+    "items": [
+      {
+        "title": "Thermography",
+        "description": "Infrared inspections that reveal hidden heat issues before they cause damage.",
+        "imageAlt": "Thermal imaging scan"
+      },
+      {
+        "title": "Vibration",
+        "description": "Detailed vibration analysis to spot early signs of wear and prevent breakdowns.",
+        "imageAlt": "Vibration analysis equipment"
+      },
+      {
+        "title": "Oil Analysis",
+        "description": "Comprehensive lubricant testing to monitor equipment health and optimize maintenance schedules.",
+        "imageAlt": "Oil analysis laboratory"
+      },
+      {
+        "title": "Balancing & Alignment",
+        "description": "Precision balancing and alignment services to ensure optimal equipment performance.",
+        "imageAlt": "Equipment balancing"
+      },
+      {
+        "title": "Ultrasonic Testing",
+        "description": "Non-destructive testing to detect internal defects and structural integrity issues.",
+        "imageAlt": "Ultrasonic testing equipment"
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Our scientific approach to condition monitoring combines ISO-standard techniques with advanced AI-powered diagnostics.",
+    "steps": [
+      {
+        "number": 1,
+        "title": "Comprehensive Data Collection",
+        "description": "We deploy our advanced sensors across your critical equipment to capture vibration signatures with precision accuracy following ISO 10816 standards."
+      },
+      {
+        "number": 2,
+        "title": "Advanced Signal Processing",
+        "description": "Our proprietary algorithms process raw data using FFT analysis, time waveform diagnostics, and envelope detection for comprehensive fault identification."
+      },
+      {
+        "number": 3,
+        "title": "AI-Powered Diagnostics",
+        "description": "Machine learning algorithms trained on 15,000+ vibration signatures identify developing faults with 94% accuracy and provide actionable recommendations."
+      }
+    ]
+  },
+  "about": {
+    "title": {
+      "main": "About",
+      "highlighted": "Nile Reliability"
+    },
+    "subtitle": "We specialize in transforming industrial maintenance from a reactive cost center into a strategic competitive advantage through data-driven reliability engineering.",
+    "values": [
+      {
+        "title": "Precision Focus",
+        "description": "Every solution is tailored to your specific operational needs and challenges."
+      },
+      {
+        "title": "Expert Team",
+        "description": "Our engineers bring decades of combined experience in industrial reliability."
+      },
+      {
+        "title": "Proven Results",
+        "description": "Track record of reducing downtime and improving operational efficiency."
+      }
+    ],
+    "trackRecord": {
+      "title": "Our Track Record",
+      "description": "With years of experience across diverse industrial sectors, we've helped companies optimize their operations, reduce costs, and improve reliability metrics.",
+      "achievements": [
+        "35% average reduction in unplanned downtime",
+        "50+ successful plant audits completed",
+        "24/7 technical support availability",
+        "ISO-certified processes and methodologies"
+      ]
+    }
+  },
+  "auditForm": {
+    "title": {
+      "main": "Request Your",
+      "highlighted": "Plant Audit"
+    },
+    "subtitle": "Get started on optimizing your operations today. Fill out the form below and our team will contact you shortly.",
+    "leftSection": {
+      "heading": {
+        "line1": "Ready to optimize",
+        "line2": "your operations?"
+      },
+      "description": "Our comprehensive plant audit will identify opportunities to reduce downtime, improve efficiency, and transform your maintenance operations into a competitive advantage.",
+      "email": "contact@nilereliability.com"
+    },
+    "form": {
+      "labels": {
+        "name": "Full Name",
+        "company": "Company Name",
+        "email": "Email Address",
+        "message": "Message"
+      },
+      "placeholders": {
+        "name": "Enter your name",
+        "company": "Enter company name",
+        "email": "your.email@company.com",
+        "message": "Tell us about your current challenges and what you'd like to achieve..."
+      },
+      "button": {
+        "submit": "Request Free Audit",
+        "submitting": "Sending..."
+      }
+    },
+    "errors": {
+      "nameRequired": "Name is required",
+      "companyRequired": "Company name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "messageRequired": "Message is required",
+      "messageMinLength": "Message must be at least 10 characters"
+    },
+    "success": {
+      "title": "Request Sent Successfully!",
+      "message": "We'll be in touch shortly to discuss your plant audit.",
+      "button": "Send New Request"
+    },
+    "error": {
+      "title": "Error Sending Request",
+      "message": "Please try again or contact us directly.",
+      "button": "Try Again"
+    },
+    "email": {
+      "subjectTemplate": "New Plant Audit Request from {name} - {company}"
+    }
+  },
+  "footer": {
+    "companyName": "Nile Reliability",
+    "companyDescription": "Ethiopia's leading provider of condition monitoring and predictive maintenance services, helping industries optimize equipment reliability and prevent unplanned downtime.",
+    "sections": {
+      "services": {
+        "title": "Services",
+        "items": [
+          "Vibration Analysis",
+          "Thermal Imaging",
+          "Oil Analysis",
+          "Balancing & Alignment",
+          "Ultrasonic Testing"
+        ]
+      },
+      "technologies": {
+        "title": "Technologies",
+        "items": [
+          "Emerson AMS",
+          "SKF Microlog",
+          "Fluke 810",
+          "IIoT Platforms",
+          "Predictive Analytics"
+        ]
+      },
+      "contact": {
+        "title": "Contact",
+        "address": "Meskel Flower, Addis Ababa",
+        "phone": "+251 920224047",
+        "email": "contact@nilereliability.com",
+        "hours": "Mon-Fri: 8:00 AM - 5:00 PM"
+      }
+    },
+    "copyright": "Nile Reliability Solutions. All rights reserved."
+  },
+  "logo": {
+    "mainText": "Nile Reliability",
+    "subText": "Solutions"
+  },
+  "dashboard": {
+    "backButton": "Back",
+    "heroTitle": "Real-time dashboard with AI-powered predictive analytics and multi-dimensional diagnostics",
+    "header": {
+      "title": "Advanced CM Dashboard",
+      "syncStatus": "99.8% Sync",
+      "securityLevel": "Level 4 Security"
+    },
+    "widgets": {
+      "frequencySpectrum": {
+        "title": "Frequency Spectrum",
+        "subtitle": "FFT Analysis • 0-10kHz",
+        "status": "Active"
+      },
+      "timeWaveform": {
+        "title": "Time Waveform",
+        "subtitle": "Raw Vibration • 51.2kHz",
+        "status": "Live"
+      },
+      "performanceTrends": {
+        "title": "Performance Trends",
+        "subtitle": "RMS Velocity • 30-Day",
+        "status": "Normal"
+      },
+      "criticalEquipment": {
+        "title": "Critical Equipment",
+        "subtitle": "Health Monitoring",
+        "status": "All Systems",
+        "vibrationLevel": "Vibration Level"
+      }
+    },
+    "equipment": [
+      {
+        "name": "Main Turbine",
+        "status": "normal"
+      },
+      {
+        "name": "Pump System A",
+        "status": "normal"
+      },
+      {
+        "name": "Compressor Unit 1",
+        "status": "normal"
+      },
+      {
+        "name": "Generator B",
+        "status": "normal"
+      }
+    ]
+  },
+  "charts": {
+    "frequencySpectrum": {
+      "xAxisLabel": "Frequency (Hz)",
+      "yAxisLabel": "Amplitude",
+      "tooltipLabel": "Frequency",
+      "tooltipValue": "Amplitude"
+    },
+    "timeWaveform": {
+      "xAxisLabel": "Time (samples)",
+      "yAxisLabel": "Amplitude",
+      "tooltipLabel": "Sample",
+      "tooltipValue": "Amplitude"
+    },
+    "performanceTrends": {
+      "xAxisLabel": "Day",
+      "yAxisLabel": "RMS Velocity (mm/s)",
+      "tooltipLabel": "Day",
+      "tooltipValue": "RMS Velocity"
+    }
+  }
+}
+

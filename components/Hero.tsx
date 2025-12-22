@@ -1,5 +1,6 @@
 'use client';
 
+import texts from '@/data/texts.json';
 import { ArrowRight, Star } from 'lucide-react';
 import React from 'react';
 
@@ -31,15 +32,15 @@ const Hero: React.FC<HeroProps> = ({ onScrollTo }) => (
 
         {/* Main Heading - Centered */}
         <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold text-white leading-[0.9] tracking-tight animate-fade-in-up max-w-5xl mx-auto">
-          <span className="block text-slate-100">Keeping Your Equipment</span>
+          <span className="block text-slate-100">{texts.hero.heading.line1}</span>
           <span className="block mt-1 text-blue-100">
-            Running Smooth
+            {texts.hero.heading.line2}
           </span>
         </h1>
 
         {/* Subtitle - Centered */}
         <p className="max-w-2xl mx-auto text-lg sm:text-xl md:text-2xl text-slate-300 font-light leading-relaxed animate-fade-in-up delay-100">
-          Accurate vibration analysis and thermal checks to catch issues early.
+          {texts.hero.subtitle}
         </p>
 
         {/* Actions - Centered */}
@@ -49,7 +50,7 @@ const Hero: React.FC<HeroProps> = ({ onScrollTo }) => (
             className="group relative px-8 py-4 bg-white text-slate-900 text-sm font-bold uppercase tracking-widest overflow-hidden transition-all hover:bg-slate-50 hover:scale-105 shadow-lg rounded-sm"
           >
             <span className="relative z-10 flex items-center gap-3">
-              Get Started
+              {texts.hero.ctaButton}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>
           </button>
@@ -62,7 +63,7 @@ const Hero: React.FC<HeroProps> = ({ onScrollTo }) => (
               ))}
             </div>
             <p className="text-sm font-medium text-slate-200 tracking-wide opacity-90">
-              Trusted by Experts.
+              {texts.hero.socialProof}
             </p>
           </div>
         </div>

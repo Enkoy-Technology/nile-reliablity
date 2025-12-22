@@ -1,5 +1,6 @@
 'use client';
 
+import texts from '@/data/texts.json';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
@@ -39,7 +40,7 @@ const Navbar: React.FC<NavbarProps> = ({ onScrollTo, isMenuOpen, setIsMenuOpen }
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-10">
-            {['Home','Dashboard', 'Services', 'About'].map((item) => (
+            {texts.navbar.menuItems.map((item) => (
               <button
                 key={item}
                 onClick={() => onScrollTo(item.toLowerCase())}
@@ -54,7 +55,7 @@ const Navbar: React.FC<NavbarProps> = ({ onScrollTo, isMenuOpen, setIsMenuOpen }
               onClick={() => onScrollTo('audit')}
               className="bg-slate-900 text-white px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-slate-800 transition-all transform hover:-translate-y-0.5 hover:shadow-lg"
             >
-              Contact Us
+              {texts.navbar.contactButton}
             </button>
           </div>
 
@@ -77,7 +78,7 @@ const Navbar: React.FC<NavbarProps> = ({ onScrollTo, isMenuOpen, setIsMenuOpen }
         }`}
       >
         <div className="px-4 py-6 space-y-4 flex flex-col items-center">
-          {['Home', 'Services', 'About'].map((item) => (
+          {texts.navbar.menuItems.filter(item => item !== 'Dashboard').map((item) => (
             <button
               key={item}
               onClick={() => {
@@ -103,7 +104,7 @@ const Navbar: React.FC<NavbarProps> = ({ onScrollTo, isMenuOpen, setIsMenuOpen }
             }}
             className="bg-slate-900 text-white w-full py-3 text-xs font-bold uppercase tracking-widest mt-4 hover:bg-slate-800 transition-colors"
           >
-            Request Audit
+            {texts.navbar.mobileMenu.contactButton}
           </button>
         </div>
       </div>

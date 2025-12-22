@@ -1,40 +1,21 @@
 'use client';
 
+import texts from '@/data/texts.json';
 import React from 'react';
 
 const Services: React.FC = () => {
-  const services = [
-    {
-      title: 'Thermography',
-      description: 'Infrared inspections that reveal hidden heat issues before they cause damage.',
-      image: "url('/images/thermography.png')",
-      imageAlt: 'Thermal imaging scan',
-    },
-    {
-      title: 'Vibration',
-      description: 'Detailed vibration analysis to spot early signs of wear and prevent breakdowns.',
-      image: "url('/images/vibration.png')",
-      imageAlt: 'Vibration analysis equipment',
-    },
-    {
-      title: 'Oil Analysis',
-      description: 'Comprehensive lubricant testing to monitor equipment health and optimize maintenance schedules.',
-      image: "url('/images/oil-analysis.png')",
-      imageAlt: 'Oil analysis laboratory',
-    },
-    {
-      title: 'Balancing & Alignment',
-      description: 'Precision balancing and alignment services to ensure optimal equipment performance.',
-      image: "url('/images/balancing.png')",
-      imageAlt: 'Equipment balancing',
-    },
-    {
-      title: 'Ultrasonic Testing',
-      description: 'Non-destructive testing to detect internal defects and structural integrity issues.',
-      image: "url('/images/ultrasonic.png')",
-      imageAlt: 'Ultrasonic testing equipment',
-    },
-  ];
+  const imageMap: Record<string, string> = {
+    'Thermography': "url('/images/thermography.png')",
+    'Vibration': "url('/images/vibration.png')",
+    'Oil Analysis': "url('/images/oil-analysis.png')",
+    'Balancing & Alignment': "url('/images/balancing.png')",
+    'Ultrasonic Testing': "url('/images/ultrasonic.png')",
+  };
+
+  const services = texts.services.items.map(service => ({
+    ...service,
+    image: imageMap[service.title],
+  }));
 
   return (
     <section id="services" className="relative py-20 sm:py-24 lg:py-32 bg-slate-50 border-t border-slate-100">
@@ -47,11 +28,11 @@ const Services: React.FC = () => {
           </div>
 
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-slate-900 mb-6">
-            Our Services
+            {texts.services.title}
           </h2>
 
           <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
-            Comprehensive condition monitoring solutions to prevent unplanned downtime and optimize equipment reliability.
+            {texts.services.subtitle}
           </p>
         </div>
 

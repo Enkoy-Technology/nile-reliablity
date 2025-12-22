@@ -1,33 +1,23 @@
 'use client';
 
+import texts from '@/data/texts.json';
 import { Award, CheckCircle2, Target, Users } from 'lucide-react';
 import React from 'react';
 
 const About: React.FC = () => {
-  const values = [
-    {
-      icon: Target,
-      title: 'Precision Focus',
-      desc: 'Every solution is tailored to your specific operational needs and challenges.'
-    },
-    {
-      icon: Users,
-      title: 'Expert Team',
-      desc: 'Our engineers bring decades of combined experience in industrial reliability.'
-    },
-    {
-      icon: Award,
-      title: 'Proven Results',
-      desc: 'Track record of reducing downtime and improving operational efficiency.'
-    }
-  ];
+  const iconMap = {
+    'Precision Focus': Target,
+    'Expert Team': Users,
+    'Proven Results': Award,
+  };
 
-  const achievements = [
-    '35% average reduction in unplanned downtime',
-    '50+ successful plant audits completed',
-    '24/7 technical support availability',
-    'ISO-certified processes and methodologies'
-  ];
+  const values = texts.about.values.map(value => ({
+    icon: iconMap[value.title as keyof typeof iconMap],
+    title: value.title,
+    desc: value.description
+  }));
+
+  const achievements = texts.about.trackRecord.achievements;
 
   return (
     <section id="about" className="py-16 sm:py-24 bg-white border-t border-slate-100">
@@ -35,12 +25,11 @@ const About: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-slate-900 mb-4 px-4">
-            About <span className="font-semibold">Nile Reliability</span>
+            {texts.about.title.main} <span className="font-semibold">{texts.about.title.highlighted}</span>
           </h2>
           <div className="w-12 h-0.5 bg-slate-900 mx-auto mb-4 sm:mb-6"></div>
           <p className="text-base sm:text-lg text-slate-500 max-w-3xl mx-auto font-light leading-relaxed px-4">
-            We specialize in transforming industrial maintenance from a reactive cost center
-            into a strategic competitive advantage through data-driven reliability engineering.
+            {texts.about.subtitle}
           </p>
         </div>
 
@@ -68,11 +57,10 @@ const About: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div>
               <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-4 sm:mb-6">
-                Our Track Record
+                {texts.about.trackRecord.title}
               </h3>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-6 sm:mb-8">
-                With years of experience across diverse industrial sectors, we&apos;ve helped
-                companies optimize their operations, reduce costs, and improve reliability metrics.
+                {texts.about.trackRecord.description}
               </p>
             </div>
             <div className="space-y-3 sm:space-y-4">
