@@ -41,11 +41,11 @@ const Services: React.FC = () => {
     },
   };
   const imageMap: Record<string, string> = {
-    'Thermography': "url('/images/thermography.png')",
+    'Thermography': "url('/images/thermography.jpg')",
     'Vibration': "url('/images/vibration.png')",
     'Oil Analysis': "url('/images/oil-analysis.png')",
-    'Balancing & Alignment': "url('/images/balancing.png')",
-    'Ultrasonic Testing': "url('/images/ultrasonic.png')",
+    'Balancing & Alignment': "url('/images/balancing.jpg')",
+    'Ultrasonic Testing': "url('/images/ultrasonic.jpg')",
   };
 
   const services = texts.services.items.map(service => ({
