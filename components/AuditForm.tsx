@@ -71,10 +71,14 @@ const AuditForm: React.FC = () => {
         }),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error('Failed to send email');
+        console.error('API Error:', data);
+        throw new Error(data.error || 'Failed to send email');
       }
 
+      console.log('Email sent successfully:', data);
       setFormStatus('success');
       setFormData({ name: '', company: '', email: '', message: '' });
       setErrors({});
