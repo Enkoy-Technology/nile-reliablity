@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@hookform/resolvers": "^3.3.4",
     "framer-motion": "^12.23.26",
     "lucide-react": "^0.344.0",

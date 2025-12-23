@@ -4,6 +4,7 @@ import texts from '@/data/texts.json';
 import { motion } from 'framer-motion';
 import { CheckCircle2, Loader2, Mail, Send } from 'lucide-react';
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const AuditForm: React.FC = () => {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -57,28 +58,45 @@ const AuditForm: React.FC = () => {
     setFormStatus('submitting');
 
     try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          company: formData.company,
-          email: formData.email,
-          message: formData.message,
-        }),
-      });
+      // EmailJS configuration - get these from your EmailJS dashboard
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '';
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '';
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        console.error('API Error:', data);
-        throw new Error(data.error || 'Failed to send email');
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS is not configured. Please check environment variables.');
       }
 
-      console.log('Email sent successfully:', data);
+      // Prepare template parameters
+      const timestamp = new Date().toLocaleString('en-US', {
+        weekday: 'short',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZoneName: 'short'
+      });
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        company: formData.company,
+        message: formData.message,
+        time: timestamp,
+        to_email: 'getbet04@gmail.com',
+        subject: `New Plant Audit Request from ${formData.name} - ${formData.company}`,
+      };
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      );
+
+      console.log('Email sent successfully:', response);
       setFormStatus('success');
       setFormData({ name: '', company: '', email: '', message: '' });
       setErrors({});
