@@ -5,7 +5,6 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { name, company, email, message } = body;
 
-    // Validate required fields
     if (!name || !company || !email || !message) {
       return NextResponse.json(
         { error: 'Missing required fields' },
@@ -13,8 +12,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Using FormSubmit - completely FREE, no API key needed!
-    // It sends emails directly to the specified addresses
     const emailData = {
       name,
       company,
@@ -22,52 +19,34 @@ export async function POST(request: NextRequest) {
       message,
       _subject: `New Plant Audit Request from ${name} - ${company}`,
       _captcha: false,
-      _template: 'table', // Nice table format
-      _replyto: email, // Reply to the user's email
+      _template: 'table',
+      _replyto: email,
     };
 
-    // Send to both email addresses simultaneously
-    const emailPromises = [
-    //   fetch('https://formsubmit.co/ajax/contact@getbet04@gmail.com', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //       'Accept': 'application/json',
-    //     },
-    //     body: JSON.stringify(emailData),
-    //   }),
+    const recipients = [
+      'https://formsubmit.co/ajax/getbet04@gmail.com',
+    ];
 
-    //   fetch('https://formsubmit.co/ajax/contact@nilereliability.com', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //       'Accept': 'application/json',
-    //     },
-    //     body: JSON.stringify(emailData),
-    //   }),
-      fetch('https://formsubmit.co/ajax/biniyamcbm1@gmail.com', {
+    const emailPromises = recipients.map((endpoint) =>
+      fetch(endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json',
+          Accept: 'application/json',
         },
         body: JSON.stringify(emailData),
-      }),
-    ];
+      })
+    );
 
     const responses = await Promise.all(emailPromises);
+    const allSuccess = responses.every((response) => response.ok);
+    const anySuccess = responses.some((response) => response.ok);
 
-    // Check if emails were sent successfully
-    const allSuccess = responses.every(response => response.ok);
-
-    if (!allSuccess) {
-      // If at least one succeeded, still show success
-      const anySuccess = responses.some(response => response.ok);
-      if (!anySuccess) {
-        throw new Error('Failed to send email');
-      }
+    if (!anySuccess) {
+      throw new Error('Failed to send email');
     }
 
+    // Even if one fails, return 200 to avoid blocking the user; log issues server-side.
     return NextResponse.json(
       { message: 'Email sent successfully' },
       { status: 200 }

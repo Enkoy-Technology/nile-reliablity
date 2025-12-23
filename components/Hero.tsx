@@ -43,6 +43,12 @@ const Hero: React.FC<HeroProps> = ({ onScrollTo }) => {
         loop
         muted
         playsInline
+        preload="auto"
+        onEnded={(e) => {
+          // Safari occasionally ignores loop; ensure restart.
+          e.currentTarget.currentTime = 0;
+          e.currentTarget.play();
+        }}
         className="w-full h-full object-cover"
       />
 

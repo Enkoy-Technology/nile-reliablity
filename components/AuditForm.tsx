@@ -57,52 +57,22 @@ const AuditForm: React.FC = () => {
     setFormStatus('submitting');
 
     try {
-      // Using FormSubmit - completely FREE, no API key needed!
-      // It sends emails directly to the specified addresses
-      const emailData = {
-        name: formData.name,
-        company: formData.company,
-        email: formData.email,
-        message: formData.message,
-        _subject: texts.auditForm.email.subjectTemplate
-          .replace('{name}', formData.name)
-          .replace('{company}', formData.company),
-        _captcha: false,
-        _template: 'table', // Nice table format
-        _replyto: formData.email, // Reply to the user's email
-      };
-
-      // Send to both email addresses simultaneously
-      const emailPromises = [
-        // fetch('https://formsubmit.co/ajax/getbet04@gmail.com', {
-        //   method: 'POST',
-        //   headers: {
-        //     'Content-Type': 'application/json',
-        //     'Accept': 'application/json',
-        //   },
-        //   body: JSON.stringify(emailData),
-        // }),
-        fetch('https://formsubmit.co/ajax/biniyamcbm1@gmail.com', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-          },
-          body: JSON.stringify(emailData),
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          company: formData.company,
+          email: formData.email,
+          message: formData.message,
         }),
-      ];
+      });
 
-      const responses = await Promise.all(emailPromises);
-
-      // Check if emails were sent successfully
-      const allSuccess = responses.every(response => response.ok);
-
-      if (!allSuccess) {
-        // If at least one succeeded, still show success
-        const anySuccess = responses.some(response => response.ok);
-        if (!anySuccess) {
-          throw new Error('Failed to send email');
-        }
+      if (!response.ok) {
+        throw new Error('Failed to send email');
       }
 
       setFormStatus('success');
