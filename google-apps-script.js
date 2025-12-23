@@ -6,7 +6,7 @@
  * 2. Click "New Project"
  * 3. Delete the default code and paste this entire script
  * 4. Create a new Google Sheet (or use an existing one)
- * 5. In the first row, add these headers: Timestamp, Name, Company, Email, Message
+ * 5. In the first row, add these headers: Timestamp, Name, Company, Email, Message, Status
  * 6. Copy the Sheet ID from the URL (the long string between /d/ and /edit)
  * 7. Replace 'YOUR_SHEET_ID_HERE' below with your actual Sheet ID
  * 8. Click "Deploy" > "New deployment"
@@ -26,13 +26,14 @@ function doPost(e) {
     const SHEET_ID = '1x0taoXzPCDJ6UWn_BXhcIJa1y1MkILVM1t9Xet6osr0';
     const sheet = SpreadsheetApp.openById(SHEET_ID).getActiveSheet();
 
-    // Append the data to the sheet
+    // Append the data to the sheet with default status "New"
     sheet.appendRow([
       data.timestamp || new Date(),
       data.name || '',
       data.company || '',
       data.email || '',
-      data.message || ''
+      data.message || '',
+      'New' // Default status for new submissions
     ]);
 
     // Send email notification - REQUIRED
