@@ -2,14 +2,22 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Nile Reliability Solutions | Plant Reliability & Maintenance Experts',
-  description: 'Expert plant reliability audits and engineering solutions. Turn maintenance from a cost center into a competitive advantage. Reduce downtime by up to 35% with our comprehensive plant audits.',
-  keywords: 'plant reliability, maintenance engineering, industrial audits, preventive maintenance, reliability engineering, plant optimization',
+  title: 'Nile Reliability Solutions | Industrial Reliability & Condition Monitoring',
+  description: 'Ethiopia\'s leading provider of condition monitoring and predictive maintenance services. We help industries optimize equipment reliability and prevent unplanned downtime through vibration analysis, thermography, and oil analysis.',
+  keywords: 'plant reliability, condition monitoring, vibration analysis, thermography, oil analysis, maintenance engineering, Ethiopia industrial services, predictive maintenance',
   authors: [{ name: 'Nile Reliability Solutions' }],
   openGraph: {
-    title: 'Nile Reliability Solutions | Plant Reliability & Maintenance Experts',
-  description: 'Expert plant reliability audits and engineering solutions. Turn maintenance from a cost center into a competitive advantage.',
+    title: 'Nile Reliability Solutions | Industrial Reliability & Condition Monitoring',
+    description: 'Ethiopia\'s leading provider of condition monitoring and predictive maintenance services. Expert plant reliability audits and engineering solutions.',
+    url: 'https://nilereliability.com',
+    siteName: 'Nile Reliability Solutions',
+    locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Nile Reliability Solutions | Industrial Reliability & Condition Monitoring',
+    description: 'Expert plant reliability audits and engineering solutions for industrial excellence.',
   },
 }
 
