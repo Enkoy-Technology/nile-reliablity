@@ -32,19 +32,19 @@ const Navbar: React.FC<NavbarProps> = ({ onScrollTo, isMenuOpen, setIsMenuOpen }
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-14 sm:h-16 md:h-20 lg:h-24">
+        <div className="flex justify-between items-center h-14 sm:h-16 md:h-16 lg:h-20 xl:h-24">
           {/* Logo Section */}
           <div className="flex-shrink-0">
             <Logo />
           </div>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-10">
+          {/* Desktop Nav - Show on tablets and up */}
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-8 xl:space-x-10">
             {texts.navbar.menuItems.map((item) => (
               <button
                 key={item}
                 onClick={() => onScrollTo(item.toLowerCase())}
-                className="text-sm font-medium uppercase tracking-wider text-slate-500 hover:text-slate-900 transition-colors relative group py-2"
+                className="text-xs md:text-sm font-medium uppercase tracking-wider text-slate-500 hover:text-slate-900 transition-colors relative group py-2"
               >
                 {item}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-slate-900 transition-all duration-300 group-hover:w-full"></span>
@@ -53,13 +53,13 @@ const Navbar: React.FC<NavbarProps> = ({ onScrollTo, isMenuOpen, setIsMenuOpen }
 
             <button
               onClick={() => onScrollTo('audit')}
-              className="bg-slate-900 text-white px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-slate-800 transition-all transform hover:-translate-y-0.5 hover:shadow-lg"
+              className="bg-slate-900 text-white px-4 md:px-5 lg:px-6 py-2 md:py-2.5 lg:py-3 text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-slate-800 transition-all transform hover:-translate-y-0.5 hover:shadow-lg"
             >
               {texts.navbar.contactButton}
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Only show on mobile */}
           <button
             className="md:hidden p-2 text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -71,7 +71,7 @@ const Navbar: React.FC<NavbarProps> = ({ onScrollTo, isMenuOpen, setIsMenuOpen }
         </div>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Mobile Nav - Only show on mobile */}
       <div
         className={`md:hidden bg-white overflow-hidden transition-all duration-300 ease-in-out ${
           isMenuOpen ? 'max-h-96 border-b border-slate-100' : 'max-h-0'
