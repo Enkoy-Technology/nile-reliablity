@@ -77,14 +77,14 @@
 //       `;
 
 //       MailApp.sendEmail({
-//         to: 'biniyamcbm1@gmail.com',
+//         to: 'contact@nilereliability.com',
 //         subject: emailSubject,
 //         htmlBody: emailHtmlBody,
 //         body: emailBody,
 //         replyTo: data.email || 'noreply@nilereliability.com'
 //       });
 
-//       Logger.log('Email sent successfully to biniyamcbm1@gmail.com');
+//       Logger.log('Email sent successfully to contact@nilereliability.com');
 //     } catch (emailError) {
 //       // Log the error but don't fail the entire request
 //       Logger.log('ERROR: Email notification failed:', emailError.toString());

@@ -105,7 +105,7 @@ Message:
 This email was sent from the Nile Reliability website contact form.
 ```
 
-5. Set **"To Email"** to: `biniyamcbm1@gmail.com`
+5. Set **"To Email"** to: `contact@nilereliability.com`
 6. Set **"From Name"** to: `{{from_name}}`
 7. Set **"Reply To"** to: `{{from_email}}`
 8. Click **"Save"**
@@ -143,7 +143,7 @@ NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key_here
 
 1. Fill out the contact form on your website
 2. Submit it
-3. Check `biniyamcbm1@gmail.com` - you should receive the email!
+3. Check `contact@nilereliability.com` - you should receive the email!
 
 ## Troubleshooting
 

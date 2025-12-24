@@ -85,7 +85,7 @@ To easily track and update the status of each submission:
 1. Fill out the contact form on your website
 2. Submit it
 3. Check your Google Sheet - you should see the new submission appear with status "New"!
-4. You'll also receive an email notification at `biniyamcbm1@gmail.com`
+4. You'll also receive an email notification at `contact@nilereliability.com`
 5. Update the status as you work through each lead (e.g., "Contacted", "Replied", etc.)
 
 ## Optional: Color Code Status Column
@@ -115,7 +115,7 @@ If you already have a sheet with submissions and want to add the Status column:
 The script automatically sends email notifications. If you want to change the email address:
 
 1. Open your Google Apps Script
-2. Find the line: `to: 'biniyamcbm1@gmail.com',`
+2. Find the line: `to: 'contact@nilereliability.com',`
 3. Change it to your preferred email
 4. Click "Deploy" > "Manage deployments" > "Edit" > "New version" > "Deploy"
 
@@ -128,7 +128,7 @@ The script automatically sends email notifications. If you want to change the em
   - Make sure you authorized email permissions (Step 4, point 6)
   - Check your spam/junk folder (emails may go to spam initially)
   - Go to Google Apps Script > "Executions" tab to see if there are any errors
-  - Make sure the email address in the script (`biniyamcbm1@gmail.com`) is correct
+  - Make sure the email address in the script (`contact@nilereliability.com`) is correct
   - Try running the `test()` function in the script editor to test email sending
 - **Need to update the script?** After making changes, click "Deploy" > "Manage deployments" > "Edit" > "New version" > "Deploy"
 

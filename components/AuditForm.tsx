@@ -84,7 +84,7 @@ const AuditForm: React.FC = () => {
         company: formData.company,
         message: formData.message,
         time: timestamp,
-        to_email: 'biniyamcbm1@gmail.com',
+        to_email: 'contact@nilereliability.com',
         subject: `New Plant Audit Request from ${formData.name} - ${formData.company}`,
       };
 
