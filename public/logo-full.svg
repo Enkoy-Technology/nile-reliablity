@@ -1,0 +1,25 @@
+<svg width="800" height="300" viewBox="0 0 800 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo with N and Text -->
+  <g>
+    <!-- Handwritten N -->
+    <path
+      d="M50 200 C 50 200, 80 50, 120 100 C 160 150, 190 60, 190 60"
+      stroke="#0f172a"
+      stroke-width="12"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- Main Text: Nile Reliability -->
+    <text x="220" y="120" font-family="Arial, sans-serif" font-size="48" font-weight="500" fill="#0f172a" letter-spacing="0.1em">
+      NILE RELIABILITY
+    </text>
+
+    <!-- Sub Text: Solutions -->
+    <text x="220" y="160" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#64748b" letter-spacing="0.2em">
+      SOLUTIONS
+    </text>
+  </g>
+</svg>
+
+
