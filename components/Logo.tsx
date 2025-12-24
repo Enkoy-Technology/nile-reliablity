@@ -15,7 +15,7 @@ const Logo: React.FC = () => (
       >
         <path
           d="M30 80 C 30 80, 40 10, 50 40 C 60 70, 70 20, 70 20"
-          stroke="#1e3a8a"
+          stroke="#0f172a"
           strokeWidth="3"
           strokeLinecap="round"
           className="path-draw"
@@ -23,7 +23,7 @@ const Logo: React.FC = () => (
       </svg>
     </div>
     <div className="flex flex-col items-start">
-      <span className="text-xl font-medium tracking-[0.2em] text-blue-900 uppercase">
+      <span className="text-xl font-medium tracking-[0.2em] text-slate-900 uppercase">
         {texts.logo.mainText}
       </span>
       <span className="text-[10px] tracking-[0.4em] text-slate-500 uppercase mt-1">
