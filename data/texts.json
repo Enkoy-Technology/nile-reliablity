@@ -43,7 +43,7 @@
     "subtitle": "Comprehensive condition monitoring solutions to prevent unplanned downtime and optimize equipment reliability.",
     "items": [
       {
-        "title": "Thermography",
+        "title": "Infrared thermography",
         "description": "Infrared inspections that reveal hidden heat issues before they cause damage.",
         "imageAlt": "Thermal imaging scan"
       },
@@ -58,7 +58,7 @@
         "imageAlt": "Oil analysis laboratory"
       },
       {
-        "title": "Balancing & Alignment",
+        "title": "Laser alignment and balancing",
         "description": "Precision balancing and alignment services to ensure optimal equipment performance.",
         "imageAlt": "Equipment balancing"
       },
