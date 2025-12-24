@@ -32,7 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({ onScrollTo, isMenuOpen, setIsMenuOpen }
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-24">
+        <div className="flex justify-between items-center h-14 sm:h-16 md:h-20 lg:h-24">
           {/* Logo Section */}
           <div className="flex-shrink-0">
             <Logo />
