@@ -1,10 +1,10 @@
 'use client';
 
 import texts from '@/data/texts.json';
+import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { CheckCircle2, Loader2, Mail, Send } from 'lucide-react';
 import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
 
 const AuditForm: React.FC = () => {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -84,7 +84,7 @@ const AuditForm: React.FC = () => {
         company: formData.company,
         message: formData.message,
         time: timestamp,
-        to_email: 'getbet04@gmail.com',
+        to_email: 'biniyamcbm1@gmail.com',
         subject: `New Plant Audit Request from ${formData.name} - ${formData.company}`,
       };
 
